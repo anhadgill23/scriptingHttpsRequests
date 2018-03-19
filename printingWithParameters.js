@@ -1,14 +1,11 @@
 var https = require('https');
 
-function getAndPrintHTML () {
+function getAndPrintHTML (options) {
 
-    var requestOptions = {
-      host: 'sytantris.github.io',
-      path: '/http-examples/step2.html'
-    };
+    /* Add your code here */
     var chunkOfData = '';
 
-    https.get(requestOptions, function (response) {
+    https.get(options, function (response) {
 
       // set encoding of received data to UTF-8
       response.setEncoding('utf8');
@@ -23,6 +20,11 @@ function getAndPrintHTML () {
       });
 
     });
-
   }
-  getAndPrintHTML();
+
+  var requestOptions = {
+    host: 'sytantris.github.io',
+    path: '/http-examples/step3.html'
+  };
+
+  getAndPrintHTML(requestOptions);
